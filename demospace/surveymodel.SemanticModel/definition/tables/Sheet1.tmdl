@@ -1,0 +1,92 @@
+table Sheet1
+	lineageTag: adb7c22f-c57f-4f65-bad5-df7125cb3f3c
+
+	column Column1
+		dataType: string
+		lineageTag: 7d49b261-c414-46eb-a37b-0e87f397ad5e
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: b9f2c845-ddab-4789-9ac9-fb3169fa7bb7
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: e8f093dc-c186-4eb7-b1ae-b8d164a94ca8
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: 0856fb8a-c0f4-40fd-bc04-e549cb0065a8
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: 6334919e-ec04-4959-a9b6-735ed0e57cc1
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column6
+		dataType: string
+		lineageTag: b1ba036e-f8bf-4160-8a3c-8f8d2edcc79c
+		summarizeBy: none
+		sourceColumn: Column6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column7
+		dataType: string
+		lineageTag: aee73e07-52af-4e15-a835-111f3feb440f
+		summarizeBy: none
+		sourceColumn: Column7
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column8
+		dataType: string
+		lineageTag: b54385f7-539f-400c-a73a-25f8749ecf76
+		summarizeBy: none
+		sourceColumn: Column8
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column9
+		dataType: string
+		lineageTag: af63a0b4-8e19-4f90-ba6c-27feeca8e02e
+		summarizeBy: none
+		sourceColumn: Column9
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column10
+		dataType: string
+		lineageTag: 42483353-ed48-4af4-bd06-e32d26039538
+		summarizeBy: none
+		sourceColumn: Column10
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Sheet1 = m
+		mode: import
+		source =
+				let
+				  Source = Excel.Workbook(Web.Contents("https://sxz5h-my.sharepoint.com/personal/pu1_ytta_in/Documents/Product%20Survey.xlsx"), null, true),
+				  #"Navigation 1" = Source{[Item = "Sheet1", Kind = "Sheet"]}[Data]
+				in
+				  #"Navigation 1"
+

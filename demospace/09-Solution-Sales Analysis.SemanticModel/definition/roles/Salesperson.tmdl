@@ -1,0 +1,7 @@
+role Salesperson
+	modelPermission: read
+
+	tablePermission 'Salesperson (Performance)' = [UPN] == USERPRINCIPALNAME()
+
+	annotation PBI_Id = 21860a861e094d4395d1d11ac230474c
+
