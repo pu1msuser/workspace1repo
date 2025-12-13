@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Image based Power BI REport"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "25d551cd-66a3-8f56-4f8a-cad3c11241d7"
+  }
+}

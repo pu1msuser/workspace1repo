@@ -1,0 +1,41 @@
+table Employeeimages
+	lineageTag: c325af86-cf67-41a2-8efa-1aea1da7f006
+
+	column 'Employee ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 53a81fa8-0f8e-45da-942e-19d86de50069
+		summarizeBy: count
+		sourceColumn: Employee ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: fe5090db-891e-4228-ac5b-21ece2c9aa3b
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImageUrl
+		dataType: string
+		lineageTag: 2f44a399-c653-4307-b857-158a06367c79
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: ImageUrl
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Employeeimages = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\shali\OneDrive - AI Learning Solution\Power BI Demo finance data\EmpData.xlsx"), null, true),
+				    Employeeimages_Table = Source{[Item="Employeeimages",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Employeeimages_Table,{{"Employee ID", Int64.Type}, {"Name", type text}, {"ImageUrl", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
